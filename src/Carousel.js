@@ -6,10 +6,12 @@ class Carousel extends React.Component {
     active: 0
   };
   static getDerivedStateFromProps({ media }) {
-    let photos = ["htpp://placecorgi.com/600/600"];
+    let photos = ["http://placecorgi.com/600/600"];
+
     if (media.length) {
       photos = media.map(({ large }) => large);
     }
+
     return { photos };
   }
   handleIndexClick = event => {
@@ -28,8 +30,9 @@ class Carousel extends React.Component {
             <img
               key={photo}
               onClick={this.handleIndexClick}
+              data-index={index}
               src={photo}
-              className={index === active ? "acative" : " "}
+              className={index === active ? "active" : ""}
               alt="animal thumbnail"
             />
           ))}
@@ -38,4 +41,5 @@ class Carousel extends React.Component {
     );
   }
 }
+
 export default Carousel;
