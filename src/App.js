@@ -6,7 +6,7 @@ import ThemeContext from "./ThemeContext";
 import SearchParams from "./SearchParams";
 
 const App = () => {
-  const themeHook = useState("peru");
+  const themeHook = useState("darkblue");
   return (
     <React.StrictMode>
       <ThemeContext.Provider value={themeHook}>
